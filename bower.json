@@ -1,0 +1,24 @@
+{
+  "name": "controverses",
+  "homepage": "https://github.com/medialab/controversy-mapping",
+  "authors": [
+    "dcfvg <qwsx@dcfvg.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "handlebars": "~4.0.5",
+    "lodash": "~4.6.1",
+    "tabletop": "~1.4.3"
+  }
+}
