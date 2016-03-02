@@ -19,6 +19,8 @@
     "bootstrap": "~3.3.6",
     "handlebars": "~4.0.5",
     "lodash": "~4.6.1",
-    "tabletop": "~1.4.3"
+    "tabletop": "~1.4.3",
+    "jquery-highlight": "~3.3.0",
+    "letteringjs": "Lettering.js#~0.7.0"
   }
 }

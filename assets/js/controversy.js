@@ -9,23 +9,27 @@ function showInfo(data, tabletop) {
   var templates = getTemplates();
   var elements = data.list.elements;
 
-  $('#results').html(templates.list( {elements:elements} ));
 
-    $("input[type='text']").on("input", function(){
-      var searchStr = $( this ).val();
-      var filtered = _.filter(elements, function (obj) {
-        return _.values(obj).some(function (el) {
-          var t = _.toString(el).toLowerCase();
-          return t.indexOf(searchStr.toLowerCase()) > -1;
-        });
+  listUpdate();
+
+  $("input[type='text']").on('input', listUpdate);
+
+  function listUpdate(){
+    var searchStr = $( "#search" ).val();
+
+    var filtered = _.filter(elements, function (obj) {
+      return _.values(obj).some(function (el) {
+        var t = _.toString(el).toLowerCase();
+        return t.indexOf(searchStr.toLowerCase()) > -1;
+      });
     });
 
-    $('#results').html(templates.list( {elements:filtered} ));
+    $('#results').html(templates.list( { elements:filtered } ) );
+    $('#results').highlight(searchStr);
 
-  });
+  }
+
 }
-
-
 
 function getTemplates(){
   var t = [];

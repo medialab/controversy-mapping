@@ -3,39 +3,37 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel='stylesheet' href='http://www.cnap.graphismeenfrance.fr/infini/css/infini-fontes.css'>
   </head>
   <body>
     <div class="container header" >
-      <h1 class="col-sm-6">Controversy Mapping Archive</h1>
+      <h1 class="col-sm-6 ligatures">Controversy Mapping Archive</h1>
 
       <div class="form-group col-sm-6">
-        <input type="text" id="search" class="form-control" placeholder="Rechercher">
+        <input type="text" id="search" class="form-control" placeholder="subject, places, year, peoples">
       </div>
     </div>
-    <hr/>
     <div class="container" id="results"></div>
 
     <script id="list" type="text/x-handlebars-template">
-      {{debug}}
-
       {{#each elements}}
-      <div class="row">
+      <div class="row element">
 
         <a href="{{url}}" target="_blanck">
          {{#if url}}
             <img src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url={{url}}" class="col-sm-2 image-responsive">
           {{/if}}
         </a>
-        <div class="col-sm-5">
 
-          <h3>{{title}}</h3>
-          <p>{{place}}</p>
+        <div class="col-sm-5">
+          <h4 class="ligatures">{{title}}</h4>
+          <p >{{place}}</p>
+          <small class="keyword">{{keywords}}</small>
         </div>
 
-        <div>
-                  <p>{{course}}</p>
-          <p><strong>{{manager}}</strong>, {{authors}}</p>
-
+        <div class="col-sm-5">
+          <h6>{{course}} {{year}}</h6>
+          <small class="authors">{{manager}}<br>{{authors}}</small>
         </div>
 
       </div>

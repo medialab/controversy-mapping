@@ -1,13 +1,30 @@
 @import '../../bower_components/bootstrap/less/bootstrap.less';
 
+@color: #e6142d;
 
+body {
+    // font-family: 'Infini', sans-serif;
+
+}
 #search {
   font-size: 2em;
   height: 3em;
+  color: @color;
+
+  &:focus {
+    border-color: @color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px @color;
+    outline: 0 none;
+  }
+
 }
 
 hr {
-  border-bottom: solid 1px red;
+  border-bottom: solid 1px @color;
 }
 
 .header {padding-top: 100px;height: 250px;}
+
+.highlight {
+    border-bottom: solid 3px @color;
+}

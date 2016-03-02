@@ -6727,11 +6727,20 @@ button.close {
 #search {
   font-size: 2em;
   height: 3em;
+  color: #e6142d;
+}
+#search:focus {
+  border-color: #e6142d;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #e6142d;
+  outline: 0 none;
 }
 hr {
-  border-bottom: solid 1px red;
+  border-bottom: solid 1px #e6142d;
 }
 .header {
   padding-top: 100px;
   height: 250px;
+}
+.highlight {
+  border-bottom: solid 3px #e6142d;
 }
