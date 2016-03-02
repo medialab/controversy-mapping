@@ -1,3 +1,3 @@
-# controversy-mapping
+# controversy-mapping (WIP)
 
 Controversy Mapping Archive

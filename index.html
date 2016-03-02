@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  </head>
+  <body>
+
+
+    <div class="container-fluid" id="search"></div>
+
+    <script id="list" type="text/x-handlebars-template">
+      {{debug}}
+
+      {{#each elements}}
+      <div class="row">
+
+        <img src="http://www.robothumb.com/src/{{url}}@320x240.jpg" class="col-sm-3 image-responsive">
+        <p class="col-sm-2">{{title}}</p>
+        <p class="col-sm-2">{{place}}</p>
+        <p class="col-sm-2">{{course}}</p>
+      </div>
+
+      {{/each}}
+    </script>
+
+    <script type="text/javascript" src="./assets/js/all.min.js"></script>
+    <script type="text/javascript" src="./assets/js/controversy.js"></script>
+  </body>
+</html>
