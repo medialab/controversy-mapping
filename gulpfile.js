@@ -7,9 +7,9 @@ var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 
 gulp.task('less', function() {
-    return gulp.src('./app/assets/less/*.less')
+    return gulp.src('./assets/less/*.less')
         .pipe(less())
-        .pipe(gulp.dest('./app/assets/css'))
+        .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream());
 });
 
@@ -18,19 +18,20 @@ gulp.task('js', function() {
       './bower_components/jquery/dist/jquery.js',
       './bower_components/lodash/lodash.js',
       './bower_components/handlebars/handlebars.min.js',
-      './bower_components/bootstrap/dist/js/bootstrap.js'
+      './bower_components/bootstrap/dist/js/bootstrap.js',
+      './bower_components/tabletop/src/tabletop.js'
       ],
       {base: 'bower_components/'}
     )
     .pipe(concat('all.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./app/assets/js/'));
+    .pipe(gulp.dest('./assets/js/'));
 });
 
 gulp.task('serve', function() {
     browserSync.init({ server: "./" });
 
-    gulp.watch('./app/assets/less/*.less', ['less']);
+    gulp.watch('./assets/less/*.less', ['less']);
     gulp.watch("*.html").on('change', browserSync.reload);
 });
 
