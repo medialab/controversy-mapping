@@ -6745,6 +6745,7 @@ hr {
   border-bottom: solid 3px #e6142d;
 }
 .blink_me {
+  color: #e6142d;
   animation: blinker 0.5s linear infinite;
 }
 @keyframes blinker {
