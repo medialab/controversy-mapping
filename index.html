@@ -13,7 +13,7 @@
         <input type="text" id="search" class="form-control" placeholder="subject, places, year, peoples">
       </div>
     </div>
-    <div class="container" id="results"></div>
+    <div class="container" id="results"><h3 class="blink_me">loading …</h3></div>
 
     <script id="list" type="text/x-handlebars-template">
       {{#each elements}}
@@ -32,12 +32,17 @@
         </div>
 
         <div class="col-sm-5">
-          <h6>{{course}} {{year}}</h6>
+          <h6>{{course}} ({{year}})</h6>
           <small class="authors">{{manager}}<br>{{authors}}</small>
         </div>
 
       </div>
         <hr/>
+
+      {{else}}
+
+        <h3 class="col-sm-12"> No results ! </h3>
+
       {{/each}}
     </script>
 
