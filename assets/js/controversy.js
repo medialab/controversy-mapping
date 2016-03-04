@@ -15,17 +15,31 @@ function showInfo(data, tabletop) {
   $("input[type='text']").on('input', listUpdate);
 
   function listUpdate(){
-    var searchStr = $( "#search" ).val();
+    var searchInput = $( "#search" ).val();
+    var s = _.deburr(searchInput.toLowerCase())
+    var matches = {};
 
     var filtered = _.filter(elements, function (obj) {
       return _.values(obj).some(function (el) {
-        var t = _.toString(el).toLowerCase();
-        return t.indexOf(searchStr.toLowerCase()) > -1;
+
+        var rawTxt = _.toString(el);
+
+        var t = _.deburr(rawTxt.toLowerCase());
+        var index = t.indexOf(s);
+
+        var match = rawTxt.substring(index, index + searchInput.length);
+
+        if(!!~index) matches[match] = true;
+        return !!~index;
+
       });
     });
 
-    $('#results').html(templates.list( { elements:filtered } ) );
-    $('#results').highlight(searchStr);
+    $('#results').html(templates.list( { elements:filtered } ));
+
+    _.forEach(matches, function(d, key){
+      $('#results').highlight(key); console.log(key)
+    })
 
   }
 
